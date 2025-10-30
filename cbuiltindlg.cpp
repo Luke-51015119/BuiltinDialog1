@@ -48,6 +48,7 @@ void CBuiltinDlg:: doPushBtn ()
 {
     QPushButton* btn = qobject_cast<QPushButton*>(sender());
 
+    //顏色對話盒
     if (btn == colorPushBtn)
     {
         QPalette palette=displayTextEdit->palette();
@@ -61,16 +62,25 @@ void CBuiltinDlg:: doPushBtn ()
         }
     }
 
+
+    //錯誤訊息盒
     if (btn == errorPushBtn)
     {
-        QErrorMessage box (this);
-        box.setWindowTitle (QStringLiteral("錯誤訊息盒"));
-        box.showMessage (QStringLiteral("錯誤訊息盒實例xx="));
-        box.showMessage (QStringLiteral("錯誤訊息盒實例yy="));
-        box.showMessage (QStringLiteral("錯誤訊息盒實例zz: "));
-        box.exec();
+        QErrorMessage* box1 = new QErrorMessage(this);
+        box1->setWindowTitle("錯誤訊息盒");
+        box1->showMessage("錯誤訊息盒實例zz=");
+
+        QErrorMessage* box2 = new QErrorMessage(this);
+        box2->setWindowTitle("錯誤訊息盒");
+        box2->showMessage("錯誤訊息盒實例yy=");
+
+        QErrorMessage* box3 = new QErrorMessage(this);
+        box3->setWindowTitle("錯誤訊息盒");
+        box3->showMessage("錯誤訊息盒實例xx: ");
     }
 
+
+    //檔案對話盒
     if (btn == filePushBtn)
     {
         QString fileName = QFileDialog::getOpenFileName (this,
@@ -80,6 +90,8 @@ void CBuiltinDlg:: doPushBtn ()
         displayTextEdit->setText(fileName);
     }
 
+
+    //字體對話盒
     if (btn == fontPushBtn)
     {
         bool ok;
@@ -90,6 +102,8 @@ void CBuiltinDlg:: doPushBtn ()
         if (ok) displayTextEdit->setFont(font);
     }
 
+
+    //輸入對話盒
     if (btn == inputPushBtn)
     {
         bool ok;
@@ -102,6 +116,8 @@ void CBuiltinDlg:: doPushBtn ()
     if (ok && ! text.isEmpty()) displayTextEdit->setText(text);
     }
 
+
+    //頁面設定對話盒
     if (btn == pagePushBtn)
     {
         QPrinter printer (QPrinter:: HighResolution);
@@ -112,6 +128,8 @@ void CBuiltinDlg:: doPushBtn ()
         }
     }
 
+
+    //進度對話盒
     if (btn== progressPushBtn)
     {
         QProgressDialog progress(QStringLiteral("正在複製檔案..."),
@@ -129,6 +147,8 @@ void CBuiltinDlg:: doPushBtn ()
         progress.setValue(10000);
     }
 
+
+    //列印對話盒
     if (btn == printPushBtn)
     {
         QPrinter printer (QPrinter:: HighResolution);
@@ -138,6 +158,7 @@ void CBuiltinDlg:: doPushBtn ()
     }
 }
 
+//更改文字顏色
 void CBuiltinDlg:: doTextColorBtn ()
 {
     QPushButton* btn = qobject_cast<QPushButton*>(sender());
