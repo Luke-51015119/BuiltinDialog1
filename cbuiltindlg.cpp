@@ -76,7 +76,7 @@ void CBuiltinDlg:: doPushBtn ()
 
         QErrorMessage* box3 = new QErrorMessage(this);
         box3->setWindowTitle("錯誤訊息盒");
-        box3->showMessage("錯誤訊息盒實例xx==");
+        box3->showMessage("錯誤訊息盒實例xx=");
     }
 
 
