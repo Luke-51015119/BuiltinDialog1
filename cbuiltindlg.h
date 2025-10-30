@@ -2,6 +2,7 @@
 #define CBUILTINDLG_H
 
 #include <QDialog>
+#include <QtWidgets>
 
 class CBuiltinDlg : public QDialog
 {
@@ -10,5 +11,19 @@ class CBuiltinDlg : public QDialog
 public:
     CBuiltinDlg(QWidget *parent = nullptr);
     ~CBuiltinDlg();
+private:
+    QTextEdit* displayTextEdit;
+    QPushButton* colorPushBtn;
+    QPushButton* errorPushBtn;
+    QPushButton* filePushBtn;
+    QPushButton* fontPushBtn;
+    QPushButton* inputPushBtn;
+    QPushButton* pagePushBtn;
+    QPushButton* progressPushBtn;
+    QPushButton* printPushBtn;
+    QPushButton* textcolorPushBtn;
+private slots:
+    void doPushBtn();
+    void doTextColorBtn();
 };
 #endif // CBUILTINDLG_H
