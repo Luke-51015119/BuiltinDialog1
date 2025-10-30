@@ -68,7 +68,7 @@ void CBuiltinDlg:: doPushBtn ()
     {
         QErrorMessage* box1 = new QErrorMessage(this);
         box1->setWindowTitle("錯誤訊息盒");
-        box1->showMessage("錯誤訊息盒實例zz=");
+        box1->showMessage("錯誤訊息盒實例zz: ");
 
         QErrorMessage* box2 = new QErrorMessage(this);
         box2->setWindowTitle("錯誤訊息盒");
@@ -76,7 +76,7 @@ void CBuiltinDlg:: doPushBtn ()
 
         QErrorMessage* box3 = new QErrorMessage(this);
         box3->setWindowTitle("錯誤訊息盒");
-        box3->showMessage("錯誤訊息盒實例xx: ");
+        box3->showMessage("錯誤訊息盒實例xx==");
     }
 
 
